@@ -19,5 +19,7 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/spring4.2.4-core"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/hibernate4.3.11"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/mysql-connector-java-5.1.26"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/spring4.2.4-persistence"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/c3p0-0.9.5.1"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>

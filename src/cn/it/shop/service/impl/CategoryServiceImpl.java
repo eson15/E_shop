@@ -1,6 +1,7 @@
 package cn.it.shop.service.impl;
 
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
 import cn.it.shop.model.Category;
 import cn.it.shop.service.CategoryService;
@@ -12,7 +13,7 @@ import cn.it.shop.utils.HibernateSessionFactory;
  */
 public class CategoryServiceImpl implements CategoryService {
 
-	@Override
+	@Override //没有整合的情况
 	public void save(Category category) {
 		//通过工具类获取session
 		Session session = HibernateSessionFactory.getSession();
@@ -30,6 +31,23 @@ public class CategoryServiceImpl implements CategoryService {
 			HibernateSessionFactory.closeSession();
 		}
 		
+	}
+	/*Spring和Hibernate整个后*/
+	private SessionFactory sessionFactory;
+	
+	//Spring会注进来
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+	
+	protected Session getSession() {
+		//从当前线程获取session，如果没有则创建一个新的session
+		return sessionFactory.getCurrentSession();
+	}
+	
+	@Override //整合后的情况
+	public void update(Category category) {
+		getSession().update(category);	
 	}
 
 }
