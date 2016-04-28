@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project>
   <disabled-container path="com.genuitec.runtime.library/com.genuitec.jstl_1.2.1"/>
+  <disabled-container path="com.genuitec.runtime.library/com.genuitec.hibernate_4.1"/>
 </project>

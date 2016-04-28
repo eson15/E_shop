@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
+	<!-- 使用txManager必须加上xmlns:tx以及关于tx的schema -->
+
+	<!-- 
+		1. 搭建Spring的开发环境
+			1.1 添加配置文件和相应的jar包
+			1.2 创建Date对象，如果成功则Spring的IOC环境OK
+			1.3 通过基于Spring Junit测试实例化Date
+			
+		2. 搭建Hibernate的开发环境
+			2.1 添加配置文件和相应的jar包和MySQL的驱动jar包
+			2.2 分析cn.it.shop.utils.HibernateSessionFactory.java的作用:加载Hibernate的配置文件，创建session
+			2.3 通过逆向工程生成model、orm映射文件
+			2.4 
+	 -->
+	 <bean id="date" class="java.util.Date" />
+
+</beans>

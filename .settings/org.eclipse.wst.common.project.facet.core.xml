@@ -8,4 +8,5 @@
   <installed facet="jst.web" version="3.0"/>
   <installed facet="jst.web.jstl" version="1.2.1"/>
   <installed facet="wst.jsdt.web" version="1.0"/>
+  <installed facet="me.hibernate" version="4.1"/>
 </faceted-project>
