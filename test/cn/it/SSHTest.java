@@ -48,6 +48,7 @@ public class SSHTest {
 	
 	@Test //测试Hibernate和Spring整合后
 	public void hibernateAndSpring() {
-		categoryService.update(new Category(1, "休闲女式", true));
+		categoryService.update(new Category(1, "休闲男式", true));
 	}
+
 }

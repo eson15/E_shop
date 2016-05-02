@@ -18,3 +18,4 @@ create table category
    primary key (id)
 );
 
+SELECT * FROM category;
