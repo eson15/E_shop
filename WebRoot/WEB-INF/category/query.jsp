@@ -3,9 +3,10 @@
 <html>
   <head>
 	<%@ include file="/public/head.jspf" %>
+
   </head>
   
   <body>
-	right.jsp
+  	类别管理vvvdf
   </body>
 </html>
