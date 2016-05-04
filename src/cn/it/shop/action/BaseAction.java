@@ -3,9 +3,13 @@ package cn.it.shop.action;
 import java.lang.reflect.ParameterizedType;
 import java.util.Map;
 
+import javax.annotation.Resource;
+
 import org.apache.struts2.interceptor.ApplicationAware;
 import org.apache.struts2.interceptor.RequestAware;
 import org.apache.struts2.interceptor.SessionAware;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
 
 import cn.it.shop.model.Category;
 import cn.it.shop.service.AccountService;
@@ -31,18 +35,15 @@ import com.opensymphony.xwork2.ModelDriven;
             ((RequestAware) action).setRequest((Map) context.get("request"));
         }
  */
+@Controller("baseAction")
+@Scope("prototype")
 public class BaseAction<T> extends ActionSupport implements RequestAware,SessionAware,ApplicationAware,ModelDriven<T> {
 
 	//service对象
+	@Resource
 	protected CategoryService categoryService;
+	@Resource
 	protected AccountService accountService;
-	
-	public void setCategoryService(CategoryService categoryService) {
-		this.categoryService = categoryService;
-	}
-	public void setAccountService(AccountService accountService) {
-		this.accountService = accountService;
-	}
 
 	//域对象
 	protected Map<String, Object> request;

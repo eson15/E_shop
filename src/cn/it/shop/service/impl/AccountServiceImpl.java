@@ -1,5 +1,7 @@
 package cn.it.shop.service.impl;
 
+import org.springframework.stereotype.Service;
+
 import cn.it.shop.model.Account;
 import cn.it.shop.service.AccountService;
 /**
@@ -7,6 +9,7 @@ import cn.it.shop.service.AccountService;
  * @author Ni Shengwu
  *
  */
+@Service("accountService")
 public class AccountServiceImpl extends BaseServiceImpl<Account> implements AccountService {
 
 	/*

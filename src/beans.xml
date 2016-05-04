@@ -49,22 +49,8 @@
 			5.4 在web.xml中配置监听器ContextLoaderListener，启动的时候加载Spring配置文件
 			Choosing bean (spring) for (com.opensymphony.xwork2.ObjectFactory)
 	 -->
-	 <!-- 如果是prototype类型，默认是使用时创建，不是启动时自动创建 -->
-	 <bean id="baseAction" class="cn.it.shop.action.BaseAction" scope="prototype">
-	 	<property name="categoryService" ref="categoryService"></property>
-	 	<property name="accountService" ref="accountService"></property>
-	 </bean>
 	 
-	 <bean id="categoryAction" class="cn.it.shop.action.CategoryAction" scope="prototype" parent="baseAction"/>
-	 <bean id="accountAction" class="cn.it.shop.action.AccountAction" scope="prototype" parent="baseAction"/>
-	 
-	 <!-- 泛型类是不能实例化的，所以要加lazy-init属性 -->
-	 <bean id="baseService" class="cn.it.shop.service.impl.BaseServiceImpl" lazy-init="true">
-	 	<property name="sessionFactory" ref="sessionFactory" />
-	 </bean>
-	 
-	 <bean id="categoryService" class="cn.it.shop.service.impl.CategoryServiceImpl" parent="baseService"/>
-	 <bean id="accountService" class="cn.it.shop.service.impl.AccountServiceImpl" parent="baseService" />
+	 <context:component-scan base-package="cn.it.shop.."/>
 	 
 	 <!-- com.mchange.v2.c3p0.ComboPooledDataSource类在c3p0-0.9.5.1.jar包的com.mchange.v2.c3p0包中 -->
 	 <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">

@@ -5,6 +5,10 @@
 
 <struts>
 	<package name="shop" extends="struts-default">
+	
+		<global-results>
+			<result name="aindex">/WEB-INF/main/aindex.jsp</result>
+		</global-results>
 
 		<!-- class对应的是Spring中配置该Action的id值，因为要交给Spring管理 -->
 		<action name="category_*" class="categoryAction" method="{1}">
@@ -13,6 +17,11 @@
 		
 		<action name="account_*" class="accountAction" method="{1}">
 			<result name="index">/index.jsp</result>
+		</action>
+		
+		<!-- 用来完成系统 请求转发的action,所有的请求都交给execute-->
+		<action name="send_*_*" class="sendAction">
+			<result name="send">/WEB-INF/{1}/{2}.jsp</result>
 		</action>
 	</package>
 

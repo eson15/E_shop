@@ -3,9 +3,13 @@ package cn.it.shop.service.impl;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.stereotype.Service;
 
 import cn.it.shop.service.BaseService;
 /**
@@ -14,9 +18,13 @@ import cn.it.shop.service.BaseService;
  *
  */
 @SuppressWarnings("unchecked")
+@Service("baseService ")
+@Lazy(true)
 public class BaseServiceImpl<T> implements BaseService<T> {
 
 	private Class clazz; //clazz中存储了当前操作的类型，即泛型T
+	
+	@Resource //放在属性上面，就不会调用set方法，使用反射注进来，所以可以把set方法干掉了
 	private SessionFactory sessionFactory;
 	
 	public BaseServiceImpl() {
@@ -26,10 +34,6 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 		//拿到泛型的参数类型
 		ParameterizedType type = (ParameterizedType) this.getClass().getGenericSuperclass();
 		clazz = (Class)type.getActualTypeArguments()[0];
-	}
-	
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
 	}
 	
 	protected Session getSession() {
