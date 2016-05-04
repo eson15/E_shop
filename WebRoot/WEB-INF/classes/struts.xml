@@ -10,6 +10,10 @@
 		<action name="category_*" class="categoryAction" method="{1}">
 			<result name="index">/index.jsp</result>
 		</action>
+		
+		<action name="account_*" class="accountAction" method="{1}">
+			<result name="index">/index.jsp</result>
+		</action>
 	</package>
 
 </struts>

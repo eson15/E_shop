@@ -10,18 +10,19 @@
 			org.hibernate.dialect.MySQLDialect
 		</property>
 		<!-- 
-		<property name="connection.url">
+			<property name="connection.url">
 			jdbc:mysql://localhost:3306/shop
-		</property>
-		<property name="connection.username">root</property>
-		<property name="connection.password">root</property>
-		<property name="connection.driver_class">
+			</property>
+			<property name="connection.username">root</property>
+			<property name="connection.password">root</property>
+			<property name="connection.driver_class">
 			com.mysql.jdbc.Driver
-		</property>
-		 -->
+			</property>
+		-->
 		<property name="show_sql">true</property>
-		
+
 		<mapping class="cn.it.shop.model.Category" />
+		<mapping class="cn.it.shop.model.Account" />
 
 
 	</session-factory>
