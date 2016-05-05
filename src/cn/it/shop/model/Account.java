@@ -1,9 +1,15 @@
 package cn.it.shop.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -13,10 +19,12 @@ import javax.persistence.Table;
 public class Account implements java.io.Serializable {
 
 	// Fields
+
 	private Integer id;
 	private String login;
 	private String name;
 	private String pass;
+	private Set<Category> categories = new HashSet<Category>(0);
 
 	// Constructors
 
@@ -25,13 +33,23 @@ public class Account implements java.io.Serializable {
 	}
 
 	/** full constructor */
+	public Account(String login, String name, String pass,
+			Set<Category> categories) {
+		this.login = login;
+		this.name = name;
+		this.pass = pass;
+		this.categories = categories;
+	}
+
 	public Account(String login, String name, String pass) {
+		super();
 		this.login = login;
 		this.name = name;
 		this.pass = pass;
 	}
-
 	
+	
+
 	@Override
 	public String toString() {
 		return "Account [id=" + id + ", login=" + login + ", name=" + name
@@ -75,6 +93,15 @@ public class Account implements java.io.Serializable {
 
 	public void setPass(String pass) {
 		this.pass = pass;
+	}
+
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "account")
+	public Set<Category> getCategories() {
+		return this.categories;
+	}
+
+	public void setCategories(Set<Category> categories) {
+		this.categories = categories;
 	}
 
 }

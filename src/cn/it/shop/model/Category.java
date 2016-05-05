@@ -2,8 +2,11 @@ package cn.it.shop.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -15,39 +18,40 @@ public class Category implements java.io.Serializable {
 	// Fields
 
 	private Integer id;
-	@Override
-	public String toString() {
-		return "Category [id=" + id + ", type=" + type + ", hot=" + hot
-				+ "]";
-	}
-
+	private Account account;
 	private String type;
 	private Boolean hot;
-	private Integer aid;
 
 	// Constructors
 
 	/** default constructor */
 	public Category() {
 	}
-	
+
 	/** full constructor */
-	public Category(String type, Boolean hot) {
+	public Category(Account account, String type, Boolean hot) {
+		this.account = account;
 		this.type = type;
 		this.hot = hot;
 	}
-	
+
 	public Category(Integer id, String type, Boolean hot) {
 		this.id = id;
 		this.type = type;
 		this.hot = hot;
 	}
 
-	/** full constructor */
-	public Category(String type, Boolean hot, Integer aid) {
+	public Category(String type, Boolean hot) {
+		super();
 		this.type = type;
 		this.hot = hot;
-		this.aid = aid;
+	}
+
+	
+	@Override
+	public String toString() {
+		return "Category [id=" + id + ", type=" + type
+				+ ", hot=" + hot + "]";
 	}
 
 	// Property accessors
@@ -60,6 +64,16 @@ public class Category implements java.io.Serializable {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "account_id")
+	public Account getAccount() {
+		return this.account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
 	}
 
 	@Column(name = "type", length = 20)
@@ -78,15 +92,6 @@ public class Category implements java.io.Serializable {
 
 	public void setHot(Boolean hot) {
 		this.hot = hot;
-	}
-
-	@Column(name = "aid")
-	public Integer getAid() {
-		return this.aid;
-	}
-
-	public void setAid(Integer aid) {
-		this.aid = aid;
 	}
 
 }

@@ -1,5 +1,7 @@
 package cn.it.shop.service.impl;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import cn.it.shop.model.Category;
@@ -12,7 +14,13 @@ import cn.it.shop.service.CategoryService;
 @Service("categoryService")
 public class CategoryServiceImpl extends BaseServiceImpl<Category> implements CategoryService {
 
-	/*
-	 * 只需实现CategoryService接口中新增的方法即可，公共方法已经在BaseServiceImpl中实现了
-	 */
+	@Override
+	public List<Category> queryJoinAccount(String type, int page, int size) {
+		String hql = "from Category c left join fetch c.account where c.type like :type";
+		return getSession().createQuery(hql)
+				.setString("type", "%" + type + "%")
+				.setFirstResult((page-1) * size) //从第几个开始显示
+				.setMaxResults(size) //显示几个
+				.list();
+	}
 }

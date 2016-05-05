@@ -1,6 +1,4 @@
 package cn.it.shop.sevice.impl;
-
-
 import javax.annotation.Resource;
 
 import org.junit.Test;
@@ -42,5 +40,12 @@ public class CategoryServiceImplTest {
 	@Test
 	public void testDelete() {
 		categoryService.delete(3);
+	}
+	
+	@Test
+	public void testQueryJoinAccount() {
+		for(Category c : categoryService.queryJoinAccount("",1,2)) {
+			System.out.println(c + "," + c.getAccount());
+		}
 	}
 }
