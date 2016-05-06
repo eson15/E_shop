@@ -24,7 +24,7 @@ public class Account implements java.io.Serializable {
 	private String login;
 	private String name;
 	private String pass;
-	private Set<Category> categories = new HashSet<Category>(0);
+//	private Set<Category> categories = new HashSet<Category>(0);
 
 	// Constructors
 
@@ -33,13 +33,13 @@ public class Account implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Account(String login, String name, String pass,
+/*	public Account(String login, String name, String pass,
 			Set<Category> categories) {
 		this.login = login;
 		this.name = name;
 		this.pass = pass;
 		this.categories = categories;
-	}
+	}*/
 
 	public Account(String login, String name, String pass) {
 		super();
@@ -95,7 +95,7 @@ public class Account implements java.io.Serializable {
 		this.pass = pass;
 	}
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "account")
+/*	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "account")
 	public Set<Category> getCategories() {
 		return this.categories;
 	}
@@ -103,5 +103,5 @@ public class Account implements java.io.Serializable {
 	public void setCategories(Set<Category> categories) {
 		this.categories = categories;
 	}
-
+*/
 }

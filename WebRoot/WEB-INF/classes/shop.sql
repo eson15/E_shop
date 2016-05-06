@@ -41,8 +41,25 @@ create table category
 
 /*插入测试用例*/
 insert into account(login,name,pass) values('admin','管理员','admin');
-insert into account(login,name,pass) values('user','客服A','user');
+insert into account(login,name,pass) values('zhangsan','张三','user');
+insert into account(login,name,pass) values('lisi','李四','admin');
+insert into account(login,name,pass) values('wangwu','王五','user');
 
+insert into category (type,hot,account_id) values('男士休闲',true,1);
+insert into category (type,hot,account_id) values('女士休闲',true,1);
+insert into category (type,hot,account_id) values('儿童休闲',false,2);
+insert into category (type,hot,account_id) values('男士休闲',true,3);
+insert into category (type,hot,account_id) values('女士休闲',false,1);
+insert into category (type,hot,account_id) values('儿童休闲',true,2);
+insert into category (type,hot,account_id) values('男士休闲',true,4);
+insert into category (type,hot,account_id) values('女士休闲',true,3);
+insert into category (type,hot,account_id) values('儿童休闲',false,2);
+insert into category (type,hot,account_id) values('男士休闲',false,1);
+insert into category (type,hot,account_id) values('女士休闲',false,3);
+insert into category (type,hot,account_id) values('儿童休闲',true,2);
+insert into category (type,hot,account_id) values('男士休闲',true,3);
+insert into category (type,hot,account_id) values('女士休闲',true,4);
+insert into category (type,hot,account_id) values('儿童休闲',false,2);
 insert into category (type,hot,account_id) values('男士休闲',true,1);
 insert into category (type,hot,account_id) values('女士休闲',true,1);
 insert into category (type,hot,account_id) values('儿童休闲',true,2);

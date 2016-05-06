@@ -1,6 +1,10 @@
 package cn.it.shop.action;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import net.sf.json.JSONObject;
 
 import org.apache.struts2.interceptor.ApplicationAware;
 import org.apache.struts2.interceptor.RequestAware;
@@ -19,29 +23,22 @@ import com.opensymphony.xwork2.ModelDriven;
 @Scope("prototype")
 public class CategoryAction extends BaseAction<Category> {
 	
-	public String update() {
-		System.out.println("----update----");
-		categoryService.update(model);
-		return "index";
-	}
-	
-	public String save() {
-		System.out.println("----save----");
-		System.out.println(model);
-		return "index";
-	}
-	
-	public String query() {
-		//解决方案一，采用相应的map取代原来的内置对象，这样与jsp没有依赖，但是代码量比较大
-//		ActionContext.getContext().put("categoryList", categoryService.query()); //放到request域中
-//		ActionContext.getContext().getSession().put("categoryList", categoryService.query()); //放到session域中
-//		ActionContext.getContext().getApplication().put("categoryList", categoryService.query()); //放到application域中
+	public String queryJoinAccount() {
+		System.out.println("type:" + model.getType());
+		System.out.println("page：" + page);
+		System.out.println("rows：" + rows);
 		
-		//解决方案二，实现相应的接口(RequestAware,SessionAware,ApplicationAware)，让相应的map注入
-		request.put("categoryList", categoryService.query()); 
-		session.put("categoryList", categoryService.query()); 
-		application.put("categoryList", categoryService.query()); 
-		return "index";
-	}
+		//用来存储分页的数据
+		pageMap = new HashMap<String, Object>();
+		
+		//根据关键字和分页的参数查询相应的数据
+		List<Category> categoryList = categoryService.queryJoinAccount(model.getType(), page, rows);
+		pageMap.put("rows", categoryList); //存储为JSON格式
+		//根据关键字查询总记录数
+		Long total = categoryService.getCount(model.getType());
+//		System.out.println(total);
+		pageMap.put("total", total); //存储为JSON格式
 
+		return "jsonMap";
+	}
 }

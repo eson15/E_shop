@@ -56,5 +56,11 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="com.genuitec.runtime.library/com.genuitec.generic_6.0"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/json-lib-2.4">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="E:/web/开发库/S2SH整合/json-lib-2.4/struts2-json-plugin-2.3.24.1.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>

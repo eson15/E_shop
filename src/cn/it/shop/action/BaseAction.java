@@ -8,10 +8,10 @@ import javax.annotation.Resource;
 import org.apache.struts2.interceptor.ApplicationAware;
 import org.apache.struts2.interceptor.RequestAware;
 import org.apache.struts2.interceptor.SessionAware;
+import org.apache.struts2.json.annotations.JSON;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import cn.it.shop.model.Category;
 import cn.it.shop.service.AccountService;
 import cn.it.shop.service.CategoryService;
 
@@ -39,6 +39,12 @@ import com.opensymphony.xwork2.ModelDriven;
 @Scope("prototype")
 public class BaseAction<T> extends ActionSupport implements RequestAware,SessionAware,ApplicationAware,ModelDriven<T> {
 
+	//page和rows和分页有关，pageMap存放查询的数据，然后打包成json格式用的
+	//page和rows实现get和set方法，pageMap只需要实现get方法即可，因为pageMap不是接收前台参数的，是让struts获取的
+	protected Integer page;
+	protected Integer rows;
+	protected Map<String, Object> pageMap = null;
+	
 	//service对象
 	@Resource
 	protected CategoryService categoryService;
@@ -75,5 +81,23 @@ public class BaseAction<T> extends ActionSupport implements RequestAware,Session
 			throw new RuntimeException(e);
 		}	
 		return model;
+	}
+	
+	public Integer getPage() {
+		return page;
+	}
+	public void setPage(Integer page) {
+		this.page = page;
+	}
+	public Integer getRows() {
+		return rows;
+	}
+	public void setRows(Integer rows) {
+		this.rows = rows;
+	}
+	
+	public Map<String, Object> getPageMap() {
+		System.out.println("--getPage--");
+		return pageMap;
 	}
 }

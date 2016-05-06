@@ -4,7 +4,10 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-	<package name="shop" extends="struts-default">
+	
+	<constant name="struts.devMode" value="true" />
+	
+	<package name="shop" extends="json-default"><!-- jason-default继承了struts-default -->
 	
 		<global-results>
 			<result name="aindex">/WEB-INF/main/aindex.jsp</result>
@@ -12,7 +15,34 @@
 
 		<!-- class对应的是Spring中配置该Action的id值，因为要交给Spring管理 -->
 		<action name="category_*" class="categoryAction" method="{1}">
-			<result name="index">/index.jsp</result>
+			<!-- 必须要先添加json包，然后上面继承json-default
+			
+			protected Object findRootObject(ActionInvocation invocation) {
+		        Object rootObject;
+				//如果配置了root，则把root指定的值转换为json格式
+		        if (this.root != null) {
+		            ValueStack stack = invocation.getStack();
+		            rootObject = stack.findValue(root);
+		        } else {
+		        //如果没有配置root，则把值栈中的栈顶对象转换为json格式
+		            rootObject = invocation.getStack().peek(); // model overrides action
+		        }
+		        return rootObject;
+		    }
+			
+			-->
+			<result name="jsonMap" type="json">
+				<!-- 要转换成json对象的数据 -->
+				<param name="root">pageMap</param>
+				<!-- 配置黑名单，过滤不需要的选项 ，支持正则表达式
+				 \d：一个数字      +:一个或多个     ?:0或1   *：1或多     [ABC]：自定义类型们必须是ABC中的一个  .：任意字符
+				{total:3,rows:[{account:{id:2,login:"user",name:"客服A",pass:"user"},hot:true,id:3,…}]}
+				-->
+				<param name="excludeProperties">
+					<!-- rows[0].account.pass-->
+					rows\[\d+\]\.account\.pass,
+				</param>
+			</result>
 		</action>
 		
 		<action name="account_*" class="accountAction" method="{1}">
