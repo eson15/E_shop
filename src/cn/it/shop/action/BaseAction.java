@@ -1,6 +1,8 @@
 package cn.it.shop.action;
 
+import java.io.InputStream;
 import java.lang.reflect.ParameterizedType;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -39,6 +41,14 @@ import com.opensymphony.xwork2.ModelDriven;
 @Scope("prototype")
 public class BaseAction<T> extends ActionSupport implements RequestAware,SessionAware,ApplicationAware,ModelDriven<T> {
 
+	//用来装有将要被打包成json格式返回给前台的数据，下面要实现get方法
+	protected List<T> jsonList = null;
+	
+	//获取要删除的ids，要有get和set方法
+	//流是用来想前台返回数据的，这个数据是让struts获取的，然后通过流的形式传到前台，所以实现get方法即可
+	protected String ids;
+	protected InputStream inputStream;
+	
 	//page和rows和分页有关，pageMap存放查询的数据，然后打包成json格式用的
 	//page和rows实现get和set方法，pageMap只需要实现get方法即可，因为pageMap不是接收前台参数的，是让struts获取的
 	protected Integer page;
@@ -100,4 +110,17 @@ public class BaseAction<T> extends ActionSupport implements RequestAware,Session
 		System.out.println("--getPage--");
 		return pageMap;
 	}
+	public String getIds() {
+		return ids;
+	}
+	public void setIds(String ids) {
+		this.ids = ids;
+	}
+	public InputStream getInputStream() {
+		return inputStream;
+	}
+	public List<T> getJsonList() {
+		return jsonList;
+	}
+	
 }

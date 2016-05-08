@@ -44,7 +44,7 @@
 					$("#tt").tabs("add",{
 						title:text,
 						closable:true,
-						content:'<iframe src="send_category_query.action" frameborder="0" width="100%" height="100%" />'
+						content:'<iframe title=" + text + " src="send_category_query.action" frameborder="0" width="100%" height="100%" />'
 						//href:默认通过url地址加载远程的页面，但是仅仅是body部分
 						//href:'send_category_query.action'
 					});
@@ -63,7 +63,7 @@
     			<div title="基本操作" data-options="iconCls:'icon-save'">   
         			<ul>
 						<li><a href="#" title="send_category_query.action">类别管理</a>
-						<li><a href="#">商品管理</a>
+						<li><a href="#" title="send_product_query.action">商品管理</a>
 					</ul>
     			</div>   
     			<div title="其他操作" data-options="iconCls:'icon-reload'">
@@ -81,7 +81,8 @@
     			</div>   
     			
     		</div>      		    	
-	    </div>   
+	    </div> 
+	    <div id="win" data-options="collapsible:false,minimizable:false,maximizable:false,modal:true"></div>  
 	</body>  
 
 </html>

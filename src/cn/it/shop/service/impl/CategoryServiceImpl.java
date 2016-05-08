@@ -32,4 +32,10 @@ public class CategoryServiceImpl extends BaseServiceImpl<Category> implements Ca
 			.setString("type", "%" + type + "%")
 			.uniqueResult(); //返回一条记录:总记录数
 	}
+
+	@Override
+	public void deleteByIds(String ids) {
+		String hql = "delete from Category c where c.id in (" + ids + ")";
+		getSession().createQuery(hql).executeUpdate();
+	}
 }

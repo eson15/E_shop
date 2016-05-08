@@ -1,5 +1,6 @@
 package cn.it.shop.action;
 
+import java.io.ByteArrayInputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -40,5 +41,23 @@ public class CategoryAction extends BaseAction<Category> {
 		pageMap.put("total", total); //存储为JSON格式
 
 		return "jsonMap";
+	}
+	
+	public String deleteByIds() {
+		System.out.println(ids);
+		categoryService.deleteByIds(ids);
+		//如果删除成功就会往下执行，我们将"true"以流的形式传给前台
+		inputStream = new ByteArrayInputStream("true".getBytes());
+		return "stream";
+	}
+	
+	public void save() {
+		System.out.println(model);
+		categoryService.save(model);
+	}
+	
+	public void update() {
+		System.out.println(model);
+		categoryService.update(model);
 	}
 }
