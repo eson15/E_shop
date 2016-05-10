@@ -52,12 +52,35 @@
 	 <context:annotation-config />
 	 <context:component-scan base-package="cn.it.shop.."/>
 	 
+	 <!-- 所有的properties文件应该交给Spring管理，而且在启动的时候加载
+	 	Spring支持两种方式，property-placeholder仅仅在xml中使用，即在beans.xml中获取properties文件中的对应的value --> 
+	 	<!-- 
+	 <context:property-placeholder location="classpath:conn.properties"/>
+	 	 -->
+	 <!-- 与下面的配置等价，下面的更容易理解 -->
+	 <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	 	<property name="locations">
+	 		<array>
+	 			<value>classpath:conn.properties</value>
+	 		</array>
+	 	</property>
+	 </bean>
+	 
+	 <!-- 第二种方式是使用注解的方式注入，主要用在java代码中使用注解注入properties文件中相应的value值 -->
+	 <bean id="prop" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+	 	<property name="locations">
+	 		<array>
+	 			<value>classpath:public.properties</value>
+	 		</array>
+	 	</property>
+	 </bean>
+	 
 	 <!-- com.mchange.v2.c3p0.ComboPooledDataSource类在c3p0-0.9.5.1.jar包的com.mchange.v2.c3p0包中 -->
-	 <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-	 	<property name="driverClass" value="com.mysql.jdbc.Driver" />
-	 	<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/shop" />
-	 	<property name="user" value="root" />
-	 	<property name="password" value="root" />
+	 <bean id="dataSource" class="${dataSource}"> <!-- 这些配置Spring在启动时会去conn.properties中找 -->
+	 	<property name="driverClass" value="${driverClass}" />
+	 	<property name="jdbcUrl" value="${jdbcUrl}" />
+	 	<property name="user" value="${user}" />
+	 	<property name="password" value="${password}" />
 	 </bean>
 	 
 	 <!-- org.springframework.orm.hibernate4.LocalSessionFactoryBean类在spring-orm-4.2.4.RELEASE.jar包的org.springframework.orm.hibernate4包中 -->

@@ -23,6 +23,7 @@
 
 		<mapping class="cn.it.shop.model.Category" />
 		<mapping class="cn.it.shop.model.Account" />
+		<mapping class="cn.it.shop.model.Product" />
 
 
 	</session-factory>

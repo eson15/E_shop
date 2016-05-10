@@ -1,5 +1,7 @@
 package cn.it.shop.model;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -7,7 +9,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /**
  * Category entity. @author MyEclipse Persistence Tools
@@ -21,6 +25,8 @@ public class Category implements java.io.Serializable {
 	private Account account;
 	private String type;
 	private Boolean hot;
+//	private Set<Product> products = new HashSet<Product>(0);
+
 
 	// Constructors
 
@@ -28,14 +34,23 @@ public class Category implements java.io.Serializable {
 	public Category() {
 	}
 
+	@Override
+	public String toString() {
+		return "Category [id=" + id + ", account=" + account + ", type=" + type
+				+ ", hot=" + hot + "]";
+	}
+
 	/** full constructor */
-	public Category(Account account, String type, Boolean hot) {
+	public Category(Account account, String type, Boolean hot,
+			Set<Product> products) {
 		this.account = account;
 		this.type = type;
 		this.hot = hot;
+//		this.products = products;
 	}
 
 	public Category(Integer id, String type, Boolean hot) {
+		super();
 		this.id = id;
 		this.type = type;
 		this.hot = hot;
@@ -45,13 +60,6 @@ public class Category implements java.io.Serializable {
 		super();
 		this.type = type;
 		this.hot = hot;
-	}
-
-	
-	@Override
-	public String toString() {
-		return "Category [id=" + id + ", type=" + type
-				+ ", hot=" + hot + "]";
 	}
 
 	// Property accessors
@@ -67,7 +75,7 @@ public class Category implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "account_id")
+	@JoinColumn(name = "aid")
 	public Account getAccount() {
 		return this.account;
 	}
@@ -93,5 +101,14 @@ public class Category implements java.io.Serializable {
 	public void setHot(Boolean hot) {
 		this.hot = hot;
 	}
+
+//	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "category")
+//	public Set<Product> getProducts() {
+//		return this.products;
+//	}
+//
+//	public void setProducts(Set<Product> products) {
+//		this.products = products;
+//	}
 
 }

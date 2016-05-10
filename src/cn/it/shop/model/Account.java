@@ -26,34 +26,34 @@ public class Account implements java.io.Serializable {
 	private String pass;
 //	private Set<Category> categories = new HashSet<Category>(0);
 
+	
 	// Constructors
 
 	/** default constructor */
 	public Account() {
 	}
 
+	@Override
+	public String toString() {
+		return "Account [id=" + id + ", login=" + login + ", name=" + name
+				+ ", pass=" + pass + "]";
+	}
+
 	/** full constructor */
-/*	public Account(String login, String name, String pass,
+	public Account(String login, String name, String pass,
 			Set<Category> categories) {
 		this.login = login;
 		this.name = name;
 		this.pass = pass;
-		this.categories = categories;
-	}*/
+//		this.categories = categories;
+	}
+	
 
 	public Account(String login, String name, String pass) {
 		super();
 		this.login = login;
 		this.name = name;
 		this.pass = pass;
-	}
-	
-	
-
-	@Override
-	public String toString() {
-		return "Account [id=" + id + ", login=" + login + ", name=" + name
-				+ ", pass=" + pass + "]";
 	}
 
 	// Property accessors
@@ -95,13 +95,13 @@ public class Account implements java.io.Serializable {
 		this.pass = pass;
 	}
 
-/*	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "account")
-	public Set<Category> getCategories() {
-		return this.categories;
-	}
+//	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "account")
+//	public Set<Category> getCategories() {
+//		return this.categories;
+//	}
+//
+//	public void setCategories(Set<Category> categories) {
+//		this.categories = categories;
+//	}
 
-	public void setCategories(Set<Category> categories) {
-		this.categories = categories;
-	}
-*/
 }

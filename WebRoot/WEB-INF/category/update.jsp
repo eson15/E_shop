@@ -14,13 +14,14 @@
 			var dg = parent.$("iframe[title='类别管理']").get(0).contentWindow.$("#dg");
 			
 			//对管理员的下拉列表框进行远程加载
-			$("#cc").combobox({    
-			    url:'account_query.action',    
+			$("#cc").combobox({   
+				//将请求发送给accountAction中的query方法处理，这里需要将处理好的数据返回到这边来显示了 ，所以后台需要将数据打包成json格式发过来
+			    url:'account_query.action',  
 			    valueField:'id',    
-			    textField:'login',
+			    textField:'login', //我们下拉列表中显示的是管理员的登录名
 			    panelHeight:'auto', //自适应高度
 			    panelWidth:120,//下拉列表是两个组件组成的
-			    width:120, //要同时设置才行
+			    width:120, //要同时设置两个宽度才行
 			    editable:false //下拉框不允许编辑
 			});  
 			
@@ -31,10 +32,10 @@
 				id:rows[0].id,
 				type:rows[0].type,
 				hot:rows[0].hot,
-				'account.id':rows[0].account.id
+				'account.id':rows[0].account.id //EasyUI不支持account.id这种点操作，所以要加个引号
 			});
 
-
+			//回显完了数据后，设置一下验证功能
 			$("input[name=type]").validatebox({
 				required:true,
 				missingMessage:'请输入类别名称'
@@ -49,9 +50,9 @@
 				if($("#ff").form("validate")) {
 					//调用submit方法提交数据
 					$("#ff").form('submit', {
-						url: 'category_update.action',
+						url: 'category_update.action', //提交时将请求传给categoryAction的update方法执行
 						success: function(){
-							//如果成功了，关闭当前窗口
+							//如果成功了，关闭当前窗口，并刷新页面
 							parent.$("#win").window("close");
 							dg.datagrid("reload");
 						}

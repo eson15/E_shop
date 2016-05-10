@@ -58,4 +58,5 @@ public class CategoryServiceImplTest {
 	public void testDeleteByIds() {
 		categoryService.deleteByIds("2,3,4,5");
 	}
+	
 }
