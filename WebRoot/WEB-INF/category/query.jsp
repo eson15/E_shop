@@ -39,7 +39,7 @@
 						parent.$("#win").window({
 							title:"添加类别",
 							width:350,
-							height:150,
+							height:200,
 							content:'<iframe src="send_category_save.action" frameborder="0" width="100%" height="100%"/>'
 						});
 					}

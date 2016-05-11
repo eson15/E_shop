@@ -1,4 +1,6 @@
 package cn.it.shop.sevice.impl;
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import net.sf.json.JSONSerializer;
@@ -47,4 +49,11 @@ public class ProductServiceImplTest {
 		productService.save(t);
 	}
 	
+	@Test
+	public void testQuerByCategoryId() {
+		List<Product> product = productService.querByCategoryId(2);
+		for(Product p : product) {
+			System.out.println(p);
+		}
+	}
 }

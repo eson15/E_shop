@@ -23,5 +23,8 @@
   	<param-name>contextConfigLocation</param-name>
   	<param-value>classpath:beans.xml</param-value>
   </context-param>
-  
+   
+  <listener>
+  	<listener-class>cn.it.shop.listener.InitDataListener</listener-class>
+  </listener>
 </web-app>

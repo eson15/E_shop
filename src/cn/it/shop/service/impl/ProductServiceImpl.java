@@ -41,4 +41,15 @@ public class ProductServiceImpl extends BaseServiceImpl<Product> implements Prod
 		getSession().createQuery(hql).executeUpdate();
 	}
 
+	@Override
+	public List<Product> querByCategoryId(int cid) {
+		String hql = "from Product p left join fetch p.category "
+				+ "where p.commend=true and p.open=true and p.category.id=:cid order by p.date desc";
+		return getSession().createQuery(hql)
+			.setInteger("cid", cid)
+			.setFirstResult(0)
+			.setMaxResults(4)
+			.list();
+	}
+
 }

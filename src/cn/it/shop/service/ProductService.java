@@ -12,4 +12,6 @@ public interface ProductService extends BaseService<Product> {
 	public Long getCount(String type);
 	//根据ids删除多条记录
 	public void deleteByIds(String ids);
+	//根据热点类别查询推荐商品（仅仅查询前4个）
+	public List<Product> querByCategoryId(int cid);
 }

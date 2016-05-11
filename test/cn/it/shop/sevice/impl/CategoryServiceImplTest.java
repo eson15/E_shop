@@ -1,4 +1,6 @@
 package cn.it.shop.sevice.impl;
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.junit.Test;
@@ -57,6 +59,14 @@ public class CategoryServiceImplTest {
 	@Test
 	public void testDeleteByIds() {
 		categoryService.deleteByIds("2,3,4,5");
+	}
+	
+	@Test
+	public void testqueryByHot() {
+		List<Category> list = categoryService.queryByHot(true);
+		for(Category c : list) {
+			System.out.println(c);
+		}
 	}
 	
 }
