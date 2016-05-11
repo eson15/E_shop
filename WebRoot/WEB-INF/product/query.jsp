@@ -17,7 +17,7 @@
 				//url地址改为请求categoryAction
 			    url:'product_queryJoinCategory.action',
 			    loadMsg:'Loading......',
-			    queryParams:{name:''},//type参数，这里不需要传具体的type，因为我们要显示所有的
+			    queryParams:{name:''},//这里不需要传具体的name，因为我们要显示所有的
 			    //width:300,
 			    fitColumns:true,//水平自动展开，如果设置此属性，则不会有水平滚动条，演示冻结列时，该参数不要设置
 			    //显示斑马线
@@ -32,6 +32,8 @@
 				//设置可选的每页记录数，供用户选择，默认是10,20,30,40...
 				pageList:[5,10,15,20],
 				idField:'id',//指定id为标识字段，在删除，更新的时候有用，如果配置此字段，在翻页时，换页不会影响选中的项
+				
+				//toolbar定义添加、删除、更新按钮以及搜索框
 				toolbar: [{
 					iconCls: 'icon-add',
 					text:'添加商品',
@@ -69,8 +71,8 @@
 							//1. 弹出更新的页面
 							parent.$("#win").window({
 								title:"更新类别",
-								width:350,
-								height:250,
+								width:650,
+								height:600,
 								content:'<iframe src="send_product_update.action" frameborder="0" width="100%" height="100%"/>'
 							});
 							//2. 

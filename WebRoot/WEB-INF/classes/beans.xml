@@ -76,12 +76,12 @@
 	 </bean>
 	 
 	 <!-- com.mchange.v2.c3p0.ComboPooledDataSource类在c3p0-0.9.5.1.jar包的com.mchange.v2.c3p0包中 -->
-	 <bean id="dataSource" class="${dataSource}"> <!-- 这些配置Spring在启动时会去conn.properties中找 -->
-	 	<property name="driverClass" value="${driverClass}" />
-	 	<property name="jdbcUrl" value="${jdbcUrl}" />
-	 	<property name="user" value="${user}" />
-	 	<property name="password" value="${password}" />
-	 </bean>
+	 <bean id="dataSource" class="${dataSource}">  
+	    <property name="driverClass" value="${driverClass}" />  
+	    <property name="jdbcUrl" value="${jdbcUrl}" />  
+	    <property name="user" value="${user}" />  
+	    <property name="password" value="${password}" />  
+	</bean>  
 	 
 	 <!-- org.springframework.orm.hibernate4.LocalSessionFactoryBean类在spring-orm-4.2.4.RELEASE.jar包的org.springframework.orm.hibernate4包中 -->
 	 <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">

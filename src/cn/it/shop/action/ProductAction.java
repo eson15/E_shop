@@ -1,10 +1,10 @@
 package cn.it.shop.action;
 
 import java.io.ByteArrayInputStream;
-
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -49,5 +49,14 @@ public class ProductAction extends BaseAction<Product> {
 		//如果删除成功就会往下执行，我们将"true"以流的形式传给前台
 		inputStream = new ByteArrayInputStream("true".getBytes());
 		return "stream";
+	}
+	
+	public void update() {
+		String pic = fileUpload.uploadFile(fileImage);
+		model.setPic(pic);
+		model.setDate(new Date());
+		System.out.println(model);
+		//更新商品
+		productService.update(model);
 	}
 }

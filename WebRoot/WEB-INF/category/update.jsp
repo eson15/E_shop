@@ -66,7 +66,7 @@
   <body>
   	<form id="ff" method="post">   
 	    <div>   
-	        <label for="name">商品名称:</label> <input type="text" name="type" />   
+	        <label for="name">类别名称:</label> <input type="text" name="type" />   
 	    </div>   
 	    <div>   
 	        <label for="hot">热点:</label>   
