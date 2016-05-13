@@ -152,7 +152,7 @@
 	                <ul id="first-carousel" class="first-and-second-carousel jcarousel-skin-tango">
 	                    <c:forEach items="${list }" var="product">
 		                    <li> 
-		                    	<a href="#" class="product_image"><img src="${shop}/files/${product.pic}" /></a>
+		                    	<a href="${shop}/product_get.action?id=${product.id}" class="product_image"><img src="${shop}/files/${product.pic}" /></a>
 		                        <div class="product_info">
 		                            <h3><a href="#">商品名称：${product.name }</a></h3>
 		                            <small>简单描述：${product.remark}</small> </div>

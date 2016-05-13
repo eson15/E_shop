@@ -32,7 +32,7 @@ public class ProductAction extends BaseAction<Product> {
 		return "jsonMap";
 	}
 	
-	public void save() throws Exception {
+	public void save() {
 		//fileUpload工具类被抽取了，uploadFile方法直接接受一个fileImage对象，返回新的图片名
 		String pic = fileUpload.uploadFile(fileImage);
 		
@@ -58,5 +58,10 @@ public class ProductAction extends BaseAction<Product> {
 		System.out.println(model);
 		//更新商品
 		productService.update(model);
+	}
+	
+	public String get() {
+		request.put("product", productService.get(model.getId()));
+		return "detail";
 	}
 }

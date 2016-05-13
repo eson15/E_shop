@@ -64,6 +64,7 @@
 			<result name="stream" type="stream">
 				<param name="inputName">inputStream</param>
 			</result>
+			<result name="detail">/detail.jsp</result>
 		</action>
 		
 		<!-- 用来完成系统 请求转发的action,所有的请求都交给execute-->
