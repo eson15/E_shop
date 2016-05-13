@@ -39,11 +39,13 @@ public class ProductServiceImpl extends BaseServiceImpl<Product> implements Prod
 	public void deleteByIds(String ids) {
 		String hql = "delete from Product p where p.id in (" + ids + ")";
 		getSession().createQuery(hql).executeUpdate();
+		//相应的服务器段保存的照片也得删掉……
+		//……
 	}
 
 	@Override
 	public List<Product> querByCategoryId(int cid) {
-		String hql = "from Product p left join fetch p.category "
+		String hql = "from Product p join fetch p.category "
 				+ "where p.commend=true and p.open=true and p.category.id=:cid order by p.date desc";
 		return getSession().createQuery(hql)
 			.setInteger("cid", cid)

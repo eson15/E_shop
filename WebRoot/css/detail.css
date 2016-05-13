@@ -1,0 +1,60 @@
+#jingdong .datu{
+                position: relative;
+                width: 350px;
+                height: 350px;
+                margin-bottom: 10px;
+            }
+            #jingdong .datu img{
+                width: 350px;
+                height: 350px;
+            }
+            #jingdong .xiaotu div{
+                float: left;
+            }
+            #jingdong .xiaotu .leftbut{
+                width: 17px;
+                height: 54px;
+                background: url(../images/jingling.png) no-repeat -68px 0;
+                margin-right: 10px;
+            }
+            #jingdong .xiaotu .rightbut{
+                width: 17px;
+                height: 54px;
+                background: url(../images/jingling.png) no-repeat -17px 0;
+               
+                margin-left: 10px;
+            }
+            #jingdong .xiaotu .tu{
+                width: 300px;
+                height: 56px;
+                overflow: hidden;
+                position: relative;
+            }
+            #jingdong .xiaotu .tu ul{
+                list-style: none;
+                width: 2000px;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+            #jingdong .xiaotu  .tu ul li{
+                float: left;
+                margin-right: 10px;
+                height: 50px;
+                width: 50px;
+                border: 2px solid white;
+            }
+            #jingdong .xiaotu  .tu ul li img{
+                width: 50px;
+                height: 50px;
+            }
+            #jingdong #fangdajing{
+                width: 180px;
+                height: 180px;
+                background: yellow;
+                opacity: 0.6;
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: none;
+            }

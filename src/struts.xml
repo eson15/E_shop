@@ -57,7 +57,7 @@
 				<param name="root">pageMap</param>
 				<param name="excludeProperties">
 					<!-- rows[0].category.account -->
-					rows\[\d+\]\.category\.account, <!-- 把所有account过滤掉，否则会出现懒加载问题 -->
+					rows\[\d+\]\.category\.account <!-- 把所有account过滤掉，否则会出现懒加载问题 -->
 					
 				</param>
 			</result>

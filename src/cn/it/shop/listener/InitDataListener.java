@@ -1,20 +1,14 @@
 package cn.it.shop.listener;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Timer;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
-import cn.it.shop.model.Category;
-import cn.it.shop.model.Product;
-import cn.it.shop.service.CategoryService;
-import cn.it.shop.service.ProductService;
+import cn.it.shop.utils.ProductTimerTask;
 /**
  * @Description: TODO(用于项目启动的时候数据初始化)
  * @author Ni Shengwu
@@ -23,8 +17,7 @@ import cn.it.shop.service.ProductService;
 //@Component //监听器是web层的组件，它是tomcat实例化的，不是Spring实例化的。不能放到Spring中
 public class InitDataListener implements ServletContextListener {
 	
-	private ProductService productService = null;
-	private CategoryService categoryService = null;
+	private ProductTimerTask productTimerTask = null;
 	private ApplicationContext context = null;
 	
 	@Override
@@ -47,19 +40,12 @@ public class InitDataListener implements ServletContextListener {
 //		System.out.println(productService);
 		
 		// 解决方案三，通过工具类加载即可
-		context = WebApplicationContextUtils.getWebApplicationContext(event.getServletContext());		
-		categoryService = (CategoryService) context.getBean("categoryService");//加载类别信息		
-		productService = (ProductService) context.getBean("productService");//加载商品信息
-
-		List<List<Product>> bigList = new ArrayList<List<Product>>(); //bigList中存放一个装有Category类的list
-		// 1. 查询出热点类别
-		for(Category category : categoryService.queryByHot(true)) {
-			//根据热点类别id获取推荐商品信息
-			List<Product> lst = productService.querByCategoryId(category.getId());
-			bigList.add(lst); //将装有category的list放到bigList中
-		}
-		// 2. 把查询的bigList交给application内置对象
-		event.getServletContext().setAttribute("bigList", bigList);
+		context = WebApplicationContextUtils.getWebApplicationContext(event.getServletContext());				
+		productTimerTask = (ProductTimerTask) context.getBean("productTimerTask");//
+		//把内置对象交给productTimerTask
+		productTimerTask.setApplication(event.getServletContext());
+		//通过设置定时器，让首页的数据每个一小时同步一次（配置为守护线程）
+		new Timer(true).schedule(productTimerTask, 0, 1000*60*60);//每个一小时执行一次productTimerTask
 	}
 
 }

@@ -70,12 +70,12 @@
 						} else{
 							//1. 弹出更新的页面
 							parent.$("#win").window({
-								title:"更新类别",
+								title:"更新商品",
 								width:650,
 								height:600,
 								content:'<iframe src="send_product_update.action" frameborder="0" width="100%" height="100%"/>'
 							});
-							//2. 
+						 
 						}
 					}
 				},'-',{

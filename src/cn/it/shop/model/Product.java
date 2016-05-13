@@ -61,7 +61,21 @@ public class Product implements java.io.Serializable {
 		this.commend = commend;
 		this.open = open;
 	}
-	
+
+	public Product(Integer id, String name, Double price, String pic,
+			String remark, String xremark, Boolean commend, Boolean open) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.price = price;
+		this.pic = pic;
+		this.remark = remark;
+		this.xremark = xremark;
+		this.commend = commend;
+		this.open = open;
+	}
+
+
 	// Property accessors
 	@Id
 	@GeneratedValue
