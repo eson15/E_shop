@@ -56,4 +56,10 @@ public class ProductServiceImplTest {
 			System.out.println(p);
 		}
 	}
+	
+	@Test
+	public void get() {
+		System.out.println(productService.get(1));
+		System.out.println(productService.get(1));
+	}
 }

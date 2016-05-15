@@ -80,7 +80,7 @@
 	    <property name="driverClass" value="${driverClass}" />  
 	    <property name="jdbcUrl" value="${jdbcUrl}" />  
 	    <property name="user" value="${user}" />  
-	    <property name="password" value="${password}" />  
+	    <property name="password" value="${password}" />
 	</bean>  
 	 
 	 <!-- org.springframework.orm.hibernate4.LocalSessionFactoryBean类在spring-orm-4.2.4.RELEASE.jar包的org.springframework.orm.hibernate4包中 -->
