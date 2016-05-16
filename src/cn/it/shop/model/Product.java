@@ -17,6 +17,7 @@ import javax.persistence.ManyToOne;
 public class Product implements java.io.Serializable {
 
 	// Fields
+	private static final long serialVersionUID = -5102917489458854913L;
 
 	private Integer id;
 	private Category category;

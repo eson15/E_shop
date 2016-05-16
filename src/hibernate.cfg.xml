@@ -20,16 +20,23 @@
 			</property>
 		-->
 		<property name="show_sql">true</property>
-		
+
 		<!-- 配置二级缓存提供商，注意此处并不是缓存的jar包 -->
-		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
-		
+		<property name="hibernate.cache.region.factory_class">
+			org.hibernate.cache.ehcache.EhCacheRegionFactory
+		</property>
+
 		<mapping class="cn.it.shop.model.Category" />
 		<mapping class="cn.it.shop.model.Account" />
 		<mapping class="cn.it.shop.model.Product" />
+		<mapping class="cn.it.shop.model.User" />
+		<mapping class="cn.it.shop.model.Status" />
+		<mapping class="cn.it.shop.model.Forder" />
+		<mapping class="cn.it.shop.model.Sorder" />
 
 		<!-- 配置哪些类支持缓存 -->
-		<class-cache usage="read-only" class="cn.it.shop.model.Product"/>
+		<class-cache usage="read-write"
+			class="cn.it.shop.model.Product" />
 	</session-factory>
 
 </hibernate-configuration>

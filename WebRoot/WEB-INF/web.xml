@@ -14,6 +14,16 @@
     <filter-name>struts2</filter-name>
     <url-pattern>*.action</url-pattern>
   </filter-mapping>
+  
+  <filter>
+  	<filter-name>UserFilter</filter-name>
+  	<filter-class>cn.it.shop.filter.UserFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>UserFilter</filter-name>
+  	<url-pattern>/user/*</url-pattern>
+  </filter-mapping>
+  
   <!-- web.xml中监听器的启动优先级要高于过滤器，所以配在下面无所谓的 -->
   <listener>
   	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

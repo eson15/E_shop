@@ -11,6 +11,7 @@
 	
 		<global-results>
 			<result name="aindex">/WEB-INF/main/aindex.jsp</result>
+			<result name="index">/index.jsp</result>
 		</global-results>
 
 		<!-- class对应的是Spring中配置该Action的id值，因为要交给Spring管理 -->
@@ -65,6 +66,14 @@
 				<param name="inputName">inputStream</param>
 			</result>
 			<result name="detail">/detail.jsp</result>
+		</action>
+		
+		<action name="sorder_*" class="sorderAction" method="{1}">
+			<result name="showCart">/user/showCart.jsp</result>
+		</action>
+		
+		<action name="user_*" class="userAction" method="{1}">
+			<result name="login" type="redirect">/ulogin.jsp</result>
 		</action>
 		
 		<!-- 用来完成系统 请求转发的action,所有的请求都交给execute-->

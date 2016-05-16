@@ -16,7 +16,10 @@ import org.springframework.stereotype.Controller;
 import cn.it.shop.model.FileImage;
 import cn.it.shop.service.AccountService;
 import cn.it.shop.service.CategoryService;
+import cn.it.shop.service.ForderService;
 import cn.it.shop.service.ProductService;
+import cn.it.shop.service.SorderService;
+import cn.it.shop.service.UserService;
 import cn.it.shop.utils.FileUpload;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -67,6 +70,12 @@ public class BaseAction<T> extends ActionSupport implements RequestAware,Session
 	protected AccountService accountService;
 	@Resource
 	protected ProductService productService;
+	@Resource
+	protected ForderService forderService;
+	@Resource
+	protected SorderService sorderService;
+	@Resource
+	protected UserService userService;
 	
 	//上传文件工具类
 	@Resource

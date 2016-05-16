@@ -14,21 +14,11 @@
                     <!--头部小导航-->
                     <div class="welcom fl">欢迎光临LEISUPET SHOP!</div>
                     <ul class="top_links fr">
-                        <li class="highlight">
-                            <a href="#">首页</a>
-                        </li>
-                        <li>
-                            <a href="#">我的账户</a>
-                        </li>
-                        <li>
-                            <a href="#">购物车</a>
-                        </li>
-                        <li>
-                            <a href="#">注册</a>
-                        </li>
-                        <li >
-                            <a href="#">登录</a>
-                        </li>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">我的账户</a></li>
+                        <li><a href="#">购物车</a></li>
+                        <li><a href="#">注册</a></li>
+                        <li ><a href="#">登录</a></li>
                     </ul>
                     <!--头部小导航结束-->
                     <!-- logo -->
@@ -261,7 +251,7 @@
                         </li>
                         <li id="summary-price">
                             <div class="dt">折&nbsp;后&nbsp;价：</div>
-                            <div class="dd"> <strong class="p-price" id="jd-price">￥89.00</strong>
+                            <div class="dd"> <strong class="p-price" id="jd-price">￥${product.price}</strong>
                             </div>
                         </li>
                     </ul>
@@ -315,8 +305,11 @@
                             </div>
                         </li>
                     </ul>
-                    <div class="add_to_buttons">
-                        <button class="add_cart"><a href="#">加入购物车</a></button>
+                    <div class="add_to_buttons">                   
+                        <a href="${shop}/sorder_addSorder.action?product.id=${product.id}">
+                        	<button class="add_cart">加入购物车</button>
+                        </a>
+                        
                     </div>
                 </div>
                 <!--详情右侧结束--> </div>
