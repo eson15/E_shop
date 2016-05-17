@@ -197,7 +197,7 @@
                 <div class="product_leftcol fl">
                     <div id="jingdong">
                         <div class="datu">
-                            <img src="${shop}/images/${product.pic}" />
+                            <img src="${shop}/files/${product.pic}" />
                             <div id="fangdajing"></div>
                         </div>
                         <div class="xiaotu">

@@ -3,8 +3,6 @@
 <html>
   <head>
 	  <%@include file="/public/head.jspf" %>	
-	  <link rel="stylesheet" href="${shop}/css/public.css" />
-      <link rel="stylesheet" href="${shop}/css/style.css" />
   </head>
   <body>
   	 <div class="wrapper">
@@ -15,20 +13,17 @@
                     <!--头部小导航-->
                     <div class="welcom fl">欢迎光临LEISUPET SHOP!</div>
                     <ul class="top_links fr">
-                        <li class="highlight">
-                            <a href="#">首页</a>
+                        <li>
+                            <a href="${shop}/index.jsp">首页</a>
                         </li>
                         <li>
                             <a href="#">我的账户</a>
                         </li>
-                        <li>
+                        <li class="highlight">
                             <a href="#">购物车</a>
                         </li>
                         <li>
-                            <a href="#">注册</a>
-                        </li>
-                        <li >
-                            <a href="#">登录</a>
+                            <a href="#">欢迎您：${user.name }</a>
                         </li>
                     </ul>
                     <!--头部小导航结束-->
@@ -219,11 +214,11 @@
 							<th class="align_center" width="20%">数量</th>
 							<th class="align_center" width="15%">小计</th>
 						</tr>
-						<c:forEach items="${sessionScope.forder.sorder}" var="sorder">
+						<c:forEach items="${sessionScope.forder.sorders}" var="sorder" varStatus="num">
 						<tr lang="${sorder.product.id}">
-							<td class="align_center"><a href="#" class="edit">${sorder.product.id}</a>
+							<td class="align_center"><a href="#" class="edit">${num.count}</a>
 							</td>
-							<td width="80px"><img src="images/cart1.jpg" width="80"
+							<td width="80px"><img src="${shop}/files/${sorder.product.pic}" width="80"
 								height="80" />
 							</td>
 							<td class="align_left"><a class="pr_name" href="#">${sorder.name}</a>

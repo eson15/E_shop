@@ -115,7 +115,7 @@
 					<tr>
 						<td class="align_center"><a href="#" class="edit">${num.count }</a>
 						</td>
-						<td width="80px"><img src="${shop}/image/${soder.product.pic}" width="80" height="80" />
+						<td width="80px"><img src="${shop}/files/${sorder.product.pic}" width="80" height="80" />
 						</td>
 						<td class="align_left"><a class="pr_name" href="#">${sorder.name }</a>
 						</td>
