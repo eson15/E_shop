@@ -2,6 +2,7 @@ package cn.it.shop.model;
 
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -33,6 +34,12 @@ public class Status implements java.io.Serializable {
 	public Status(String status, Set<Forder> forders) {
 		this.status = status;
 		this.forders = forders;
+	}
+
+	
+	public Status(Integer id) {
+		super();
+		this.id = id;
 	}
 
 	// Property accessors

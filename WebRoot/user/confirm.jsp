@@ -2,9 +2,14 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-	  <%@include file="/public/head.jspf" %>	
+	  <%@include file="/public/head.jspf" %>
+	  <% response.setHeader("cache-control", "no-store"); %>	
   </head>
   <body>
+  	 <c:if test="${empty sessionScope.forder.sorders }">
+  	 	<!-- 如果购物车中的购物项为空，则跳转到首页 -->
+  	 	<c:redirect url="/index.jsp"/>
+  	 </c:if>
   	 <div class="wrapper">
         <div class="header">
             <div class="header_container">
@@ -238,7 +243,7 @@
                    
                 </div>
                 <!-- 订购人确认 -->
-                <form action="#" method="post">
+                <form action="${shop}/forder_save.action" method="post">
 	                <div class="person-check check">
 	                    <h1>订购人信息</h1>
 	                    <div class="person-checkinner">

@@ -144,7 +144,7 @@ public class Product implements java.io.Serializable {
 		this.xremark = xremark;
 	}
 
-	@Column(name = "date", nullable = false, length = 19)
+	@Column(name = "date", nullable = true, length = 19)
 	public Date getDate() {
 		return this.date;
 	}

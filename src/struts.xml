@@ -72,6 +72,10 @@
 			<result name="showCart">/user/showCart.jsp</result>
 		</action>
 		
+		<action name="forder_*" class="forderAction" method="{1}">
+			<result name="bank" type="redirect">/user/bank.jsp</result>
+		</action>
+		
 		<action name="user_*" class="userAction" method="{1}">
 			<result name="login" type="redirect">/ulogin.jsp</result>
 			<result name="goURL" type="redirect">

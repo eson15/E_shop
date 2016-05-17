@@ -26,8 +26,12 @@ public class SorderServiceImpl extends BaseServiceImpl<Sorder> implements
 		}
 		//当前购物项在购物车中不存在，新添加即可
 		if(!isHave) {
+			//在向购物中添加购物项之前，先建立购物项与购物车的关联，但是此时forder.id为null，
+			//但是在入库的时候是先入库购物车，再入库购物项，那时候就有主键了
+			sorder.setForder(forder);
 			forder.getSorders().add(sorder);
 		}
+		
 		return forder;
 	}
 

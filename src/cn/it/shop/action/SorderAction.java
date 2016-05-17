@@ -1,5 +1,6 @@
 package cn.it.shop.action;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 
 import org.springframework.context.annotation.Scope;
@@ -20,7 +21,7 @@ public class SorderAction extends BaseAction<Sorder> {
 		//2. 判断当前session是否有购物车，如果没有则创建
 		if(session.get("forder") == null) {
 			//创建新的购物车，存储到session中
-			session.put("forder", new Forder(new HashSet<Sorder>()));
+			session.put("forder", new Forder(new ArrayList<Sorder>()));
 		} 
 
 		//3. 把商品信息转化为sorder,并且添加到购物车中（判断购物项是否重复）

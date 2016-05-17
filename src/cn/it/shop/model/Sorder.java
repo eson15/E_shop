@@ -1,5 +1,6 @@
 package cn.it.shop.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,7 +14,6 @@ import javax.persistence.Table;
  * Sorder entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "sorder", catalog = "shop")
 public class Sorder implements java.io.Serializable {
 
 	// Fields

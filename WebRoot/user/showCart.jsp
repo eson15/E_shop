@@ -170,10 +170,10 @@
 							<font><font>清空购物车</font>
 							</font>
 						</button>
-						<button type="button" title="" class="continue fr">
-							<font><font>继续购物</font>
-							</font>
-						</button>
+						<a href="${shop}/index.jsp">
+							<button type="button" title="" class="continue fr">
+								<font>继续购物</font>
+							</button></a>
 						<div style="clear:both"></div>
 					</div>
 				</div>

@@ -21,5 +21,4 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements
 			.uniqueResult();
 	}
 
-	
 }
