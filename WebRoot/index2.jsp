@@ -6,6 +6,6 @@
   </head>
   
   <body>
-  	<a href="send_main_aindex.action">直接到后台easyUI版</a>
+  	<a href="send_main_aindex.action">欢迎进入后台管理</a>
   </body>
 </html>

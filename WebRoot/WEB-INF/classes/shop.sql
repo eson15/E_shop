@@ -139,7 +139,7 @@ create table forder
 );
 
 /* 修改自动增长的初始值 */
-ALTER TABLE forder AUTO_INCREMENT = 2013021801;
+ALTER TABLE forder AUTO_INCREMENT = 201605001;
 
 /*=============================*/
 /* Table: 购物项表结构 		       */
@@ -238,8 +238,8 @@ INSERT INTO status (status) VALUES ('订单完成');
 INSERT INTO forder (name,phone,remark,date,total,address,post,uid) VALUES ('bb','123','备注',default,200.3,'广州天河区','1000',1);
 
 /*插入购物车项测试用例*/
-INSERT INTO sorder (name,price,number,pid,fid) VALUES ('空调',200,1,15,2013021801);
-INSERT INTO sorder (name,price,number,pid,fid) VALUES ('电视',0.3,1,16,2013021801);
+INSERT INTO sorder (name,price,number,pid,fid) VALUES ('空调',200,1,15,201605001);
+INSERT INTO sorder (name,price,number,pid,fid) VALUES ('电视',0.3,1,16,201605001);
 
 
 SELECT * FROM account;

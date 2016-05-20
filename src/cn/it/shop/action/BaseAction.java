@@ -17,6 +17,7 @@ import cn.it.shop.model.FileImage;
 import cn.it.shop.service.AccountService;
 import cn.it.shop.service.CategoryService;
 import cn.it.shop.service.ForderService;
+import cn.it.shop.service.PayService;
 import cn.it.shop.service.ProductService;
 import cn.it.shop.service.SorderService;
 import cn.it.shop.service.UserService;
@@ -76,6 +77,8 @@ public class BaseAction<T> extends ActionSupport implements RequestAware,Session
 	protected SorderService sorderService;
 	@Resource
 	protected UserService userService;
+	@Resource
+	protected PayService payService;
 	
 	//上传文件工具类
 	@Resource

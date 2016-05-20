@@ -249,15 +249,15 @@
 	                    <div class="person-checkinner">
 	                        <div>
 	                        	<label>配送姓名:</label>
-	                        	<input type="text" name="name" />
+	                        	<input type="text" name="name" value="${sessionScope.user.name }"/>
 	                        </div>
 	                        <div>
 	                        	<label>联系方式:</label>
-	                        	<input type="text" name="phone" />
+	                        	<input type="text" name="phone" value="${sessionScope.user.phone }"/>
 	                        </div>
 	                        <div>
 	                        	<label>区域邮编:</label>
-	                        	<input type="text" name="post" />
+	                        	<input type="text" name="post" value="${sessionScope.user.phone }"/>
 	                        </div>
 	                        <div>
 	                        	<label>配送地址:</label>
