@@ -6,9 +6,12 @@ import org.apache.struts2.interceptor.ParameterAware;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
+
+
 import cn.it.shop.model.BackData;
 import cn.it.shop.model.Forder;
 import cn.it.shop.model.SendData;
+import cn.it.shop.model.Status;
 import cn.it.shop.model.User;
 /**
  * Struts处理流程：
@@ -21,7 +24,7 @@ import cn.it.shop.model.User;
  */
 @Controller("payAction")
 @Scope("prototype")
-public class PayAction extends BaseAction<Object> implements ParameterAware{
+public class PayAction extends BaseAction<Object> implements ParameterAware {
 	
 	private Map<String, String[]> parameters;
 	
@@ -60,11 +63,16 @@ public class PayAction extends BaseAction<Object> implements ParameterAware{
 
 	public void backBank() {
 		BackData backData = (BackData)model;
+		System.out.println(model);
 		boolean isOK = payService.checkBackData(backData);
 		if(isOK) {
-			System.out.println("----success----");
+			//1. 更新订单状态,参数是自己根据数据库中的情况传进去的，用来测试
+			forderService.updateStatusById(Integer.valueOf(201605006), 2);
+			//2. 根据user邮箱地址，发送邮件
+			//3. 发送手机短信
+			System.out.println("----success!!----");
 		} else {
-			System.out.println("----false----");
+			System.out.println("----false!!!----");
 		}
 	}
 

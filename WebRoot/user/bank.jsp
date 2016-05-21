@@ -245,7 +245,6 @@
                            </c:forEach>
                         </ul>
                     </div>
-http://www.yeepay.com/app-merchant-proxy/redirectMerchant2015.action?confusion=d70fce16784988977816ec0bfa922bdcb71d57351747d179f8ec899fc50fc2e80292aa45ec3ccc114d801205bdaf1cfac72cdbd0187d646467751e1810cf56240736378308e45df1&customerNumber=10000940764                   
                     <div class="clear"></div>
                     <div class="reminder"><span>请确保您的银行卡已开通网银支付功能，否则没有办法完成支付&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a href="">如何开通?</a></div>
                     <div class="pay-submit">
