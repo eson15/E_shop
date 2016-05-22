@@ -16,8 +16,8 @@ import org.springframework.stereotype.Component;
  * @author Ni Shengwu
  *
  */
-@Component("messageUtil")
-public class MessageUtilImpl implements MessageUtil {
+@Component("emailUtil")
+public class EmailUtilImpl implements EmailUtil {
 	
 	@Override
 	public void sendEmail(String emailAddress, String id) {
