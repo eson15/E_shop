@@ -10,7 +10,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import cn.it.shop.utils.FileUpload;
-import cn.it.shop.utils.ProductTimerTask;
+import cn.it.shop.utils.impl.ProductTimerTask;
 /**
  * @Description: TODO(用于项目启动的时候数据初始化)
  * @author Ni Shengwu

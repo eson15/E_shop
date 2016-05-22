@@ -1,4 +1,4 @@
-package cn.it.shop.utils;
+package cn.it.shop.utils.impl;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import cn.it.shop.model.FileImage;
+import cn.it.shop.utils.FileUpload;
 
 /**
  * @Description: TODO(实现文件上传的业务逻辑)

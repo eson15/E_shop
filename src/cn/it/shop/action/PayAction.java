@@ -67,11 +67,13 @@ public class PayAction extends BaseAction<Object> implements ParameterAware {
 		boolean isOK = payService.checkBackData(backData);
 		if(isOK) {
 			//1. 更新订单状态,参数是自己根据数据库中的情况传进去的，用来测试
-			forderService.updateStatusById(Integer.valueOf(201605006), 2);
+			forderService.updateStatusById(Integer.parseInt(backData.getR6_Order()), 2);
 			//2. 根据user邮箱地址，发送邮件
 			String emailAddress = backData.getR8_MP().split(",")[0];
 			emailUtil.sendEmail(emailAddress, backData.getR6_Order());
 			//3. 发送手机短信
+			String phoneNum = backData.getR8_MP().split(",")[1];
+			messageUtil.sendMessage(phoneNum, backData.getR6_Order());
 			System.out.println("----success!!----");
 		} else {
 			System.out.println("----false!!!----");

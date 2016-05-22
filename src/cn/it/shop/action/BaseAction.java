@@ -23,6 +23,7 @@ import cn.it.shop.service.SorderService;
 import cn.it.shop.service.UserService;
 import cn.it.shop.utils.FileUpload;
 import cn.it.shop.utils.EmailUtil;
+import cn.it.shop.utils.MessageUtil;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -82,6 +83,8 @@ public class BaseAction<T> extends ActionSupport implements RequestAware,Session
 	protected PayService payService;
 	@Resource 
 	protected EmailUtil emailUtil;
+	@Resource 
+	protected MessageUtil messageUtil;
 	
 	//上传文件工具类
 	@Resource

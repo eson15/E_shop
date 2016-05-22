@@ -1,4 +1,4 @@
-package cn.it.shop.utils;
+package cn.it.shop.utils.impl;
 
 import java.util.Properties;
 
@@ -10,6 +10,8 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 import org.springframework.stereotype.Component;
+
+import cn.it.shop.utils.EmailUtil;
 
 /**
  * @Description: TODO(用来完成邮件的发送)
