@@ -69,6 +69,8 @@ public class PayAction extends BaseAction<Object> implements ParameterAware {
 			//1. 更新订单状态,参数是自己根据数据库中的情况传进去的，用来测试
 			forderService.updateStatusById(Integer.valueOf(201605006), 2);
 			//2. 根据user邮箱地址，发送邮件
+			String emailAddress = backData.getR8_MP().split(",")[0];
+			messageUtil.sendEmail(emailAddress, backData.getR6_Order());
 			//3. 发送手机短信
 			System.out.println("----success!!----");
 		} else {

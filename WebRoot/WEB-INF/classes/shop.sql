@@ -223,7 +223,7 @@ INSERT INTO product (name,price,pic,remark,xremark,commend,open,cid) VALUES
 
 /* 用户测试用例 */
 INSERT INTO user (login,name,pass,sex,phone,email)
-VALUES ('user','小刚','user','男','13812345678','10000@qq.com');
+VALUES ('user','小刚','user','男','18027364651','soft03_test@sina.com');
 
 INSERT INTO user (login,name,pass,sex,phone,email)
 VALUES ('user2','小琴','user2','女','13812345679','20000@qq.com');
