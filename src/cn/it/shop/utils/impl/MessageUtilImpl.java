@@ -29,8 +29,8 @@ public class MessageUtilImpl implements MessageUtil {
 		post.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
 		post.setParameter("Uid", "eson_15");
 		post.setParameter("Key", "0537729d0b59a7e7358b");
-		post.setParameter("smsMob", "15216771570");
-		post.setParameter("smsText", "测试一下！");
+		post.setParameter("smsMob", phoneNum);
+		post.setParameter("smsText", "您的订单" + id + "已经生成！");
 		//4. 提交请求并返回状态码
 		try {
 			int code = 0;

@@ -61,6 +61,7 @@
 	 <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 	 	<property name="locations">
 	 		<array>
+	 		    <!-- <value>classpath:remote.properties</value> -->
 	 			<value>classpath:conn.properties</value>
 	 		</array>
 	 	</property>

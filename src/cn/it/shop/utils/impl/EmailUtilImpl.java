@@ -37,7 +37,7 @@ public class EmailUtilImpl implements EmailUtil {
 			// 创建一封邮件对象
 			message = new MimeMessage(session);
 			// 写信
-				message.setSubject("欢迎访问我的CSDN博客主页！");
+				message.setSubject("易购商城邮件");
 			// 正文内容
 			message.setContent("顾客您好，欢迎您光顾网上商城，订单" + id + "已支付成功！", "text/html;charset=utf-8");
 			// 附件人地址

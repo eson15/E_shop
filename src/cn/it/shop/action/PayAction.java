@@ -61,7 +61,7 @@ public class PayAction extends BaseAction<Object> implements ParameterAware {
 		return "pay";
 	}
 
-	public void backBank() {
+	public String backBank() {
 		BackData backData = (BackData)model;
 		System.out.println(model);
 		boolean isOK = payService.checkBackData(backData);
@@ -75,8 +75,10 @@ public class PayAction extends BaseAction<Object> implements ParameterAware {
 			String phoneNum = backData.getR8_MP().split(",")[1];
 			messageUtil.sendMessage(phoneNum, backData.getR6_Order());
 			System.out.println("----success!!----");
+			return "index";
 		} else {
 			System.out.println("----false!!!----");
+			return "error";
 		}
 	}
 

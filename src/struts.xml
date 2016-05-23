@@ -12,6 +12,7 @@
 		<global-results>
 			<result name="aindex">/WEB-INF/main/aindex.jsp</result>
 			<result name="index">/index.jsp</result>
+			<result name="error">/error.jsp</result>
 		</global-results>
 
 		<!-- class对应的是Spring中配置该Action的id值，因为要交给Spring管理 -->
