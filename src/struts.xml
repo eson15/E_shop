@@ -13,6 +13,9 @@
 			<result name="aindex">/WEB-INF/main/aindex.jsp</result>
 			<result name="index">/index.jsp</result>
 			<result name="error">/error.jsp</result>
+			<result name="stream" type="stream">
+				<param name="inputName">inputStream</param>
+			</result>
 		</global-results>
 
 		<!-- class对应的是Spring中配置该Action的id值，因为要交给Spring管理 -->
@@ -63,12 +66,9 @@
 					
 				</param>
 			</result>
-			<result name="stream" type="stream">
-				<param name="inputName">inputStream</param>
-			</result>
+			
 			<result name="detail">/detail.jsp</result>
-		</action>
-		
+		</action>	
 		<action name="sorder_*" class="sorderAction" method="{1}">
 			<result name="showCart">/user/showCart.jsp</result>
 		</action>

@@ -1,5 +1,7 @@
 package cn.it.shop.model;
 
+import java.math.BigDecimal;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,7 +24,7 @@ public class Sorder implements java.io.Serializable {
 	private Forder forder;
 	private Product product;
 	private String name;
-	private Double price;
+	private BigDecimal price;
 	private Integer number;
 
 	// Constructors
@@ -37,7 +39,7 @@ public class Sorder implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Sorder(Forder forder, Product product, String name, Double price,
+	public Sorder(Forder forder, Product product, String name, BigDecimal price,
 			Integer number) {
 		this.forder = forder;
 		this.product = product;
@@ -88,11 +90,11 @@ public class Sorder implements java.io.Serializable {
 	}
 
 	@Column(name = "price", precision = 8)
-	public Double getPrice() {
+	public BigDecimal getPrice() {
 		return this.price;
 	}
 
-	public void setPrice(Double price) {
+	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
 

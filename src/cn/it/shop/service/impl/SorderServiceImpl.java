@@ -44,4 +44,14 @@ public class SorderServiceImpl extends BaseServiceImpl<Sorder> implements
 		sorder.setProduct(product);
 		return sorder;
 	}
+
+	@Override
+	public Forder updateSorder(Sorder sorder, Forder forder) {
+		for(Sorder temp : forder.getSorders()) {
+			if(temp.getProduct().getId().equals(sorder.getProduct().getId())) {
+				temp.setNumber(sorder.getNumber());
+			}
+		}
+		return forder;
+	}
 }

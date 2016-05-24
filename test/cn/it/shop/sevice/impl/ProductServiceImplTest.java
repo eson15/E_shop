@@ -1,4 +1,5 @@
 package cn.it.shop.sevice.impl;
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -39,7 +40,7 @@ public class ProductServiceImplTest {
 	
 	@Test
 	public void testSave() {
-		Product t = new Product(null, "test2", 23.22, "da8b3609-8ecf-4157-8075-a6e9028bd64d.jpg", "cccc", "cccc", null, true, true);
+		Product t = new Product(null, "test2", new BigDecimal(23.22), "da8b3609-8ecf-4157-8075-a6e9028bd64d.jpg", "cccc", "cccc", null, true, true);
 		Category c = (Category) categoryService.queryJoinAccount("¶ùÍ¯ÐÝÏÐ", 1, 1).get(0);
 		c.setType(null);
 		c.setAccount(null);

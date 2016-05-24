@@ -1,5 +1,6 @@
 package cn.it.shop.action;
 
+import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -33,5 +34,17 @@ public class SorderAction extends BaseAction<Sorder> {
 		//5. 把新的购物车存储到session中
 		session.put("forder", forder);
 		return "showCart";
+	}
+	
+	//根据商品编号更新商品数量
+	public String updateSorder() {
+		Forder forder = (Forder) session.get("forder");
+		forder = sorderService.updateSorder(model, forder);
+		//计算新的总价格
+		forder.setTotal(forderService.cluTotal(forder));
+		session.put("forder", forder);
+		//以流的形式返回新的总价格
+		inputStream = new ByteArrayInputStream(forder.getTotal().toString().getBytes());
+		return "stream";
 	}
 }

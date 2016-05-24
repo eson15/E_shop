@@ -1,5 +1,6 @@
 package cn.it.shop.model;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -22,7 +23,7 @@ public class Product implements java.io.Serializable {
 	private Integer id;
 	private Category category;
 	private String name;
-	private Double price;
+	private BigDecimal price;
 	private String pic;
 	private String remark;
 	private String xremark;
@@ -49,7 +50,7 @@ public class Product implements java.io.Serializable {
 
 
 	/** full constructor */
-	public Product(Category category, String name, Double price, String pic,
+	public Product(Category category, String name, BigDecimal price, String pic,
 			String remark, String xremark, Date date, Boolean commend,
 			Boolean open) {
 		this.category = category;
@@ -63,7 +64,7 @@ public class Product implements java.io.Serializable {
 		this.open = open;
 	}
 
-	public Product(Integer id, String name, Double price, String pic,
+	public Product(Integer id, String name, BigDecimal price, String pic,
 			String remark, String xremark, Boolean commend, Boolean open) {
 		super();
 		this.id = id;
@@ -109,11 +110,11 @@ public class Product implements java.io.Serializable {
 	}
 
 	@Column(name = "price", precision = 8)
-	public Double getPrice() {
+	public BigDecimal getPrice() {
 		return this.price;
 	}
 
-	public void setPrice(Double price) {
+	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
 
