@@ -71,6 +71,7 @@
 		</action>	
 		<action name="sorder_*" class="sorderAction" method="{1}">
 			<result name="showCart">/user/showCart.jsp</result>
+			<result name="jsonList" type="json"></result>
 		</action>
 		
 		<action name="forder_*" class="forderAction" method="{1}">

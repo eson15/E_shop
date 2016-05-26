@@ -223,7 +223,7 @@ INSERT INTO product (name,price,pic,remark,xremark,commend,open,cid) VALUES
 
 /* 用户测试用例 */
 INSERT INTO user (login,name,pass,sex,phone,email)
-VALUES ('user','小刚','user','男','18027364651','soft03_test@sina.com');
+VALUES ('user','小刚','user','男','15216771570','nishengwus@163.com');
 
 INSERT INTO user (login,name,pass,sex,phone,email)
 VALUES ('user2','小琴','user2','女','13812345679','20000@qq.com');
@@ -236,11 +236,17 @@ INSERT INTO status (status) VALUES ('订单完成');
 
 /*插入购物车测试用例*/
 INSERT INTO forder (name,phone,remark,date,total,address,post,uid) VALUES ('bb','123','备注',default,200.3,'广州天河区','1000',1);
+INSERT INTO forder (name,phone,remark,date,total,address,post,uid) VALUES ('bb','123','备注',default,200.3,'上海嘉定区','1000',2);
+INSERT INTO forder (name,phone,remark,date,total,address,post,uid) VALUES ('bb','123','备注',default,200.3,'上海宝山区','1000',2);
 
 /*插入购物车项测试用例*/
-INSERT INTO sorder (name,price,number,pid,fid) VALUES ('空调',200,1,15,201605001);
-INSERT INTO sorder (name,price,number,pid,fid) VALUES ('电视',0.3,1,16,201605001);
-
+INSERT INTO sorder (name,price,number,pid,fid) VALUES ('空调',200,3,15,201605001);
+INSERT INTO sorder (name,price,number,pid,fid) VALUES ('电视',0.3,5,16,201605001);
+INSERT INTO sorder (name,price,number,pid,fid) VALUES ('杉杉西服',0.3,7,3,201605003);
+INSERT INTO sorder (name,price,number,pid,fid) VALUES ('圣德西服',0.3,12,1,201605003);
+INSERT INTO sorder (name,price,number,pid,fid) VALUES ('韩版女装',0.3,20,5,201605003);
+INSERT INTO sorder (name,price,number,pid,fid) VALUES ('雪地靴',0.3,10,6,201605003);
+INSERT INTO sorder (name,price,number,pid,fid) VALUES ('欧版女装',0.3,9,7,201605003);
 
 SELECT * FROM account;
 SELECT * FROM category;
@@ -249,3 +255,4 @@ SELECT * FROM user;
 SELECT * FROM status;
 SELECT * FROM forder;
 SELECT * FROM sorder;
+select sum(number) as '销量', name '名称' from sorder group by pid

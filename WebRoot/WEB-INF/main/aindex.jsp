@@ -58,16 +58,15 @@
 	    <div data-options="region:'west',title:'系统操作',split:true" style="width:200px;">
 	    	<!-- 此处显示的是系统菜单 -->
 	    	<div id="menu" class="easyui-accordion" data-options="fit:true">   
-    			<div title="基本操作" data-options="iconCls:'icon-save'">   
+    			<div title="基本操作">   
         			<ul>
 						<li><a href="#" title="send_category_query.action">类别管理</a>
 						<li><a href="#" title="send_product_query.action">商品管理</a>
 					</ul>
     			</div>   
-    			<div title="其他操作" data-options="iconCls:'icon-reload'">
+    			<div title="销售管理">
     				<ul>
-						<li><a href="#">类别管理</a>
-						<li><a href="#">商品管理</a>
+						<li><a href="#" title="send_sale_sale.action">销售管理</a>
 					</ul>
     			</div>   
 			</div>   
