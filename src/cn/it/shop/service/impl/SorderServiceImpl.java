@@ -60,11 +60,6 @@ public class SorderServiceImpl extends BaseServiceImpl<Sorder> implements
 	
 	@Override
 	public List<Object> querySale(int number) {
-		//不用fecth查出来的就是两项
-		String hql = "select s.name, sum(s.number) from Sorder s join s.product group by s.product.id";
-		return getSession().createQuery(hql) //
-			.setFirstResult(0) //
-			.setMaxResults(number) //
-			.list();
+		return sorderDao.querySale(number);
 	}
 }
