@@ -19,7 +19,7 @@
 >Spring --> Hibernate --> Spring整合Hibernate --> Struts2 --> Spring整合Struts2
 
 　　<font size=3>每一步做完写个测试类测试一下，这很重要，因为一步步往下走的话，出错了也知道错在哪一步，去哪找问题，最重要的是，这种流程熟练了，下次再搭环境的时候就易如反掌了。关于SSH环境搭建的详细信息请看下面的博文：　　
-　　<a href="http://blog.csdn.net/eson_15/article/details/51277324" target="blank>整合Struts2、Hibernate4.3和Spring4.2</a>
+    [整合Struts2、Hibernate4.3和Spring4.2](http://blog.csdn.net/eson_15/article/details/51277324)
 　　<a href="http://blog.csdn.net/eson_15/article/details/51297698" target="blank>基本增删查改、Service和Action的抽取以及使用注解替换xml</a>
 <table><tr><td bgcolor=#F5FFFA><h2><strong>2. 搭建后台管理系统</h3></td></tr></table>
 　　<font size=3>后台管理系统我用的是EasyUI搭建的，说真的，EasyUI我也是一知半解，前端的东西我了解的都不深，但是懂一点，具体用的时候也是各种去查的，也没系统的学过，所以没有一个良好的知识体系，但是也不影响去玩。程序猿都喜欢说玩一个技术啥的，听起来好像挺高大上的，慢慢的我也受到一些影响，也喜欢这么说了，不过我对于前端就真的在玩了……　　
@@ -104,7 +104,4 @@
 　　<font size=3><a href="http://blog.csdn.net/eson_15/article/details/51506334" target="blank>使用JsChart技术在后台显示商品销售报表</a>
 
 　　<font size=3>网上商城这个项目目前就写这么多了，CSDN下载频道中的源码和我的博客里是同步的，大家如果有需要可以下载我在CSDN里上传的源码（免费的~我的所有资源均免费）。后期如果要继续完善，我会放到我的github中，也欢迎大家Follow我的github（虽然一般般啦~）Star我上传的工程~下面是具体的下载地址：
-
-　　<font size=3><a href="http://download.csdn.net/detail/eson_15/9532399" target="blank">CSDN下载地址</a>（与博客内容同步）
-　　<a href="https://github.com/eson15/E_shop" target="blank">GitHub下载地址</a>（后期如果有更新会放在这）
 　　
