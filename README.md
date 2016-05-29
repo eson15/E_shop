@@ -1,4 +1,4 @@
-#基于Struts2+Hibernate4+Spring4的网上商城项目实战源码
+#基于Struts2+Hibernate4+Spring4+EasyUI+MySQL的网上商城项目实战源码
 ##我的CSDN博客地址：<a href="http://blog.csdn.net/eson_15/" target="blank">http://blog.csdn.net/eson_15/
 ##0. 写在前面
 　　<font size=3>项目基本完成了，与这个项目相关的博客也写了30篇。总结一下这个网上商城的项目，我不会面面俱到，主要分为几个模块来总结，包括 用到了哪些技术等等，具体的细节我会在文章中附上快速链接，大家可以查看具体的某篇博文。
